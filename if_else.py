@@ -187,43 +187,67 @@ Kiểm tra xem 3 cạnh đó có hợp lệ hay không? Nếu hợp lệ thì ta
 (đều, vuông, cân, vuông cân hay thường) ?
 '''
 
-a = int(input("Nhap cannh a: "))
-b = int(input("Nhap cannh b: "))
-c = int(input("Nhap cannh c: "))
+# a = int(input("Nhap cannh a: "))
+# b = int(input("Nhap cannh b: "))
+# c = int(input("Nhap cannh c: "))
+#
+# is_equilateral = False
+# is_balance = False
+# is_square = False
+#
+# if (a > 0 and b > 0 and c > 0) and (a + b > c and a + c > b and c + b > a):
+#     if a == b and b == c and a == c:
+#         is_equilateral = True
+#
+#     if a == c or a == b or b == c:
+#         is_balance = True
+#
+#     if a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
+#         is_square = True
+#
+#     if is_equilateral:
+#         print('tam giac deu')
+#
+#     if is_square:
+#         print('tam giac vuong')
+#
+#     if is_balance:
+#         print('tam giac can')
+#
+#     if is_square and is_balance:
+#         print('tam giac vuong can')
+#
+#     if not is_balance and not is_equilateral and not is_square:
+#         print('tam giac thuong')
+# else:
+#     print('tam giac khong hop le')
 
-is_equilateral = False
-is_balance = False
-is_square = False
+'''
+13. Viết chương trình giải và biện luận phương trình bậc hai: ax2 + bx + c = 0.
+'''
 
-if (a > 0 and b > 0 and c > 0) and (a + b > c and a + c > b and c + b > a):
-    if a == b and b == c and a == c:
-        is_equilateral = True
+import math
 
-    if a == c or a == b or b == c:
-        is_balance = True
+a = int(input("Nhap a: "))
+b = int(input("Nhap b: "))
+c = int(input("Nhap c: "))
 
-    if a**2 + b**2 == c**2 or a**2 + c**2 == b**2 or b**2 + c**2 == a**2:
-        is_square = True
-
-    if is_equilateral:
-        print('tam giac deu')
-
-    if is_square:
-        print('tam giac vuong')
-
-    if is_balance:
-        print('tam giac can')
-
-    if is_square and is_balance:
-        print('tam giac vuong can')
-
-    if not is_balance and not is_equilateral and not is_square:
-        print('tam giac thuong')
+if a == 0:
+    if b == 0 and c != 0:
+        print("Phuong trinh vo nghiem")
+    elif b == 0 and c == 0:
+        print("Phuong trinh vo so nghiem")
+    else:
+        print(f"Phuong trinh co nghiem duy nhat la: {-c/b}")
 else:
-    print('tam giac khong hop le')
+    delta = b**2 - 4*a*c
 
-
-
+    if delta < 0:
+        print("Phuong trinh vo nghiem")
+    elif delta == 0:
+        print(f"Phuong trinh co nghiem kep: {-b/(2*a)}")
+    else:
+        print(f"Phuong trinh co 2 nghiem phan biet: x1 = {(-b - math.sqrt(delta)) / (2*a):.3f}, x2 = {(-b + math.sqrt(delta)) / (2*a):.3f}")
 
 
 
